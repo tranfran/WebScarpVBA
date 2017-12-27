@@ -1,0 +1,22 @@
+'Reference "Internet Controls" Library and "HTML" library
+
+dim IE as new SHDocVw.internetexplorermedium
+dim HTMLDOC as MSHTML.iHTMLDOCUMENT
+dim HTMLinput1 as MSHTML.iHTMLelement
+dim HTMLinput2 as MSHTML.iHTMLelement
+dim HTMLbuttons as MSHTML.iHTMLelementcollection
+dim HTMLbutton as MSHTML.iHTMLelement
+
+IE.visible = True
+
+IE.navigate = "URL"
+
+do while  IE.READYSTATE <> READYSTATE_COMPLETE
+	'NOTHING
+loop
+
+set HTMLDOC  = IE.document
+set htmlinput1 = HTMLdoc.getelementbyid("ID")
+set htmlinput2 = HTMLdoc.getelementbyid("password")
+
+
